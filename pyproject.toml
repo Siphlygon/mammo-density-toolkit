@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mammo-density-toolkit"
+version = "0.0.1"
+dependencies = [
+    "torch",
+    "torchvision",
+    "scikit-learn",
+    "numpy",
+    "pandas",
+    "matplotlib",
+]
+authors = [
+  {name = "Ashley Parr", email = "ashley.parr@protonmail.com"},
+]
+description = "A small toolkit for evaluating uncertainty and fairness in deep-learning-based mammographic density predictions"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E.*"]
+
+[project.urls]
+Repository = "https://github.com/Siphlygon/mammo-density-toolkit"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mammodtk*"]
+exclude = ["docs*", "tests*"]
+namespaces = false
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
