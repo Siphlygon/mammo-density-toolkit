@@ -1,7 +1,7 @@
 # Gitignore file for the project
 
 # Data files
-data/
+data/*
 
 # Building project
 mammo_density_toolkit.egg-info/
